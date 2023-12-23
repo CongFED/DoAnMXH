@@ -13,15 +13,21 @@ import { IoIosClose } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import { LuSend } from "react-icons/lu";
 interface Props {
-  content1: any;
-  imgg: any;
-  id: any;
-  idPost: any;
+  content1: string;
+  imgg: string;
+  id: string;
+  idPost: string;
   countLike: any;
   islike: any;
 }
 interface Comment {
   content: string;
+  image: string;
+  userHandle: string;
+  fullName: string;
+  id: string;
+  replyContent: string;
+  childrenComment: any;
 }
 interface ResponseData {
   data: Comment[];
@@ -132,7 +138,7 @@ const ItemPost = ({
           }
         })
         .catch((error: any) => {
-          setLike(like + 1);
+          console.log(error);
         });
     } catch (error) {
       console.error("Login failed", error);
@@ -220,8 +226,8 @@ const ItemPost = ({
   };
   const hanldDltCmtChild = async (pId: string) => {
     setAuthToken(token);
-    const postId = idPost;
-    const userId = id;
+    // const postId = idPost;
+    // const userId = id;
     const parentId = pId;
     return api
       .post(
@@ -398,7 +404,7 @@ const ItemPost = ({
                     <div className="flex flex-col">
                       {item.childrenComment
                         .slice(0, visibleComments)
-                        .map((childComment, index1) => (
+                        .map((childComment: any, index1: any) => (
                           <div
                             key={index1}
                             className="flex justify-between mb-2 border-solid border-l-[1px] border-[#cfcfcf] "

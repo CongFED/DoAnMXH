@@ -30,7 +30,6 @@ import { ZIM } from "zego-zim-web";
 import Info from "./pages/Info/Info";
 import ForgotPassword from "src/pages/ForgotPW/ForgotPW";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
-import PasswordReset from "./pages/ForgotPW/PasswordReset";
 import VerifyCode1 from "./pages/VerifyCode1/VerifyCode1";
 import ChangePW from "./pages/ChangePW/ChangePW";
 function App() {

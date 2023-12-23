@@ -25,7 +25,7 @@ interface Comment {
   createDate: string;
   userId: string;
   id: string;
-  countLike: number;
+  countLike: any;
   islike: boolean;
 }
 

@@ -92,7 +92,7 @@ const Header = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const handleAccept = async (id) => {
+  const handleAccept = async (id: any) => {
     setAuthToken(token);
     return api
       .post(`http://www.socialnetwork.somee.com/api/Friend/accept/${id}`)
@@ -101,7 +101,7 @@ const Header = () => {
       })
       .catch((err) => console.log(err));
   };
-  const handleRefuse = async (id) => {
+  const handleRefuse = async (id: any) => {
     setAuthToken(token);
     try {
       const response = await api.post(
@@ -121,31 +121,7 @@ const Header = () => {
   };
 
   const [sb, setSb] = useState(false);
-  const handleConfirm = async () => {
-    setAuthToken(token);
-    try {
-      const id = idfriend;
-      const response = await api.delete(
-        `http://www.socialnetwork.somee.com/api/Friend/unfriend/${id}`
-      );
-      console.log(response);
-      // if(response.status == 200) {
-      //   const responseInfo = await api.get(
-      //     `http://www.socialnetwork.somee.com/api/infor/user/${id}`
 
-      //   );setStatusF(responseInfo.data.data.statusFriend)
-      // }
-    } catch (error) {
-      console.error("Login failed", error);
-    }
-    // Xử lý khi nhấn xác nhận
-    setSb(false);
-  };
-
-  const handleCancel = () => {
-    // Xử lý khi nhấn hủy
-    setSb(false);
-  };
   return (
     <>
       <div
@@ -685,9 +661,7 @@ const Header = () => {
             </div>
             {/* Nội dung form đặt lịch */}
             <div className="flex items-center">
-              <label for="voice-search" className="sr-only">
-                Search
-              </label>
+              <label className="sr-only">Search</label>
               <div className="relative w-full">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
@@ -709,7 +683,6 @@ const Header = () => {
                 <input
                   onChange={(e) => setSearchU(e.target.value)}
                   type="text"
-                  id="voice-search"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-[#ff6d45]"
                   placeholder="Search Users..."
                   required

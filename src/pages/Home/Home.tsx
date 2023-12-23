@@ -35,6 +35,7 @@ interface Comment1 {
   xid?: string;
   fullName?: string;
   image?: string;
+  userId?: string;
 }
 
 interface ResponseData {

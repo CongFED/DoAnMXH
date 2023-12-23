@@ -33,10 +33,7 @@ const ChangePW = () => {
 
           <div className="space-y-8">
             <div>
-              <label
-                for="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Your email
               </label>
               <input
@@ -49,10 +46,7 @@ const ChangePW = () => {
               />
             </div>
             <div>
-              <label
-                for="pw"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Your New Password
               </label>
               <input
