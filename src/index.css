@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  display: flex;
+  /* justify-content: center; */
+  box-sizing: border-box;
+}
+textarea {
+  resize: both; /* or horizontal, vertical, none */
+}
+
+.slick-list {
+  min-height: 150px;
+}
+body {
+  background: #f9f8f8;
+  /* font-family: 'Brown-pro', sans-serif !important; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Nunito Sans', sans-serif; */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-y: scroll;
+  height: 100vh;
+  color: #000;
+  width: 100vw;
+  margin: 0;
+}
+
+/* Begin customize color of Antd steps */
+.ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: #44c5e5 !important;
+  width: 2px !important;
+}
+
+.ant-steps-item-finish .ant-steps-icon > span > svg {
+  color: #44c5e5;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: transparent !important;
+}
+
+.ant-dropdown .ant-dropdown-menu {
+  box-shadow: 0 5px 20px rgb(0 0 0 / 3%);
+}
+
+.ant-steps .ant-steps-item-subtitle {
+  margin-inline-start: 0px;
+}
+
+.ant-steps-item-process .ant-steps-icon > span > svg {
+  color: #44c5e5;
+}
+
+.ant-steps-item-active .ant-steps-item-title {
+  color: #44c5e5 !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-title {
+  color: #44c5e5 !important;
+}
+/* End customize color of Antd steps */
+
+/* Begin customize ok button of time picker */
+.ant-picker-ok > button {
+  background: #44c5e5;
+}
+/* End customize ok button of time picker */
+
+/* Begin customize expand icon Antd */
+.ant-collapse-expand-icon svg {
+  color: #d9d4d4;
+}
+/* End customize expand icon Antd */
+
+/* Begin responsive for hero section in home page */
+@media (max-width: 1023px) {
+  .ant-space-item {
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+/* End responsive for hero section in home page */
+
+/*  */
+.ant-collapse-header {
+  padding: 10px 0 !important;
+}
+/*  */
+
+/* src/components/Arrow.css (hoặc index.css nếu muốn sử dụng toàn cục) */
+.arrow-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  transition: left 0.5s ease;
+}
+
+.arrow:hover {
+  animation: moveLeft 1s forwards;
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+
+.blur-bg {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.css-3tbo2w-MuiCircularProgress-root {
+  width: 20px !important;
+  height: 20px !important;
+}
